@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>メディア情報入力ページ</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<div id="mediabox">
+
+<form action="media2.php" METHOD="post" style="display: inline">
+	<table>
+	<tr>
+		<th>日付</th>
+		<td id="mflex"><input type="text" name="media1" id="media1"><p>YYYY/MM/DD 半角</p></td>
+	</tr>
+	<tr>
+		<th>メディアタイプ</th>
+		<td id="mediatype">
+			<select name="media2">
+		    	<option value="テレビ" checked>テレビ</option>
+		    	<option value="新聞">新聞</option>
+		    	<option value="ラジオ">ラジオ</option>
+		    	<option value="WEB">WEB</option>
+		    </select>
+		</td>
+	</tr>
+	<tr>
+		<th>媒体・タイトル</th>
+		<td><input type="text" name="media3" id="media3"></td>
+	</tr>
+	<tr>
+		<th>備考</th>
+		<td><textarea name="media4" cols="55" rows="3" style="white-space:pre-wrap;"></textarea></td>
+	</tr>
+
+	</table>
+	　　　　　　　　　　　　　　　　<input type="submit" value="送信" id="msgbot">
+
+</form>
+</div>
+</body>
+</html>

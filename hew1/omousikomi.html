@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>三重県南部自動車学校</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/test.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
+
+
+
+<script>
+  $(function() {
+
+
+    $(".datepicker").datepicker({
+    	minDate: 0,maxDate: new Date(2019, 10, 31),dateFormat: "yy-mm-dd", 
+
+    	beforeShowDay: function(dt) {
+        return [dt.getDay() == 2 || dt.getDay() == 4 || dt.getDay() == 6 ? true : false]
+    }
+
+
+    });
+
+
+  });
+
+
+
+
+</script>
+
+</head>
+
+<body>
+<div id=wrapper>
+<div id=header>
+		<div id="hideform">
+	<form action="kakunin.php" METHOD="post">
+	<table>
+		<tr>
+		    <th>メールアドレス</th>
+		    <td><input type="text" name="mail" class="twidth"></td>
+		    <th>パスワード</th>
+		    <td><input type="password" name="pass" class="twidth"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+			<th></th>
+			<td><input type="submit" value="GO!" class="rb"></td>
+		</tr>
+	</table>
+	　　　　　　　　　　　
+	</form>
+	</div><!-- hideform -->
+
+	<div id="klink"><ul><li onclick="hideopen();"><a>お申込内容確認</a></li></ul></div>
+	<img src="images/site-name1.png" id="title">
+	<img src="images/top-tel.gif" id="toptel">
+</div><!-- header -->
+<div id=naviwidth>
+<div id=navi>
+	<ul>
+		<li><a href="index.html">トップページ</a></li>
+ 		<li><a href="miryoku.html">NANBUの魅力</a></li>
+ 		<li><a href="plan.html">プラン紹介</a></li>
+ 		<li><a href="ryoukin.html"><div id=nh>料金表</div><span id=navispan>入校日カレンダー</span></a></li>
+ 		<li><a href="sisetu.html">施設案内</a></li>
+ 		<li><a href="gakkou.html">学校案内</a></li>
+ 		<li><a href="omousikomi.html">お申し込み</a></li>
+ 	</ul>
+</div><!-- navi -->
+</div><!-- naviwidth -->
+
+<div id="container">
+	<div id="itemA">
+		<div class="linkimg"><img src="images/title-request.jpg" width="690" height="193"></div>
+
+		<div id="moubox">
+		<p>入校予約のお申込みは、以下のフォームより承っております。<br>お申込みの際には、必ず以下の「お申込み規約」をご覧いただき、同意の上お申込みください。</p>
+		<p class="redpp">※このお申込みフォーム送信をもって契約が成立するものではございません。</p>
+
+		<h3><a href="omousikomikiyaku.html"><img src="images/btn-agreement.jpg"></a></h3>
+
+		<form action="omousikomi.php" METHOD="post" id="form_1" autocomplete="off">
+
+		<table id="mousutable">
+			<caption>
+				■お申込み
+			</caption>
+			<tr>
+				<th>お名前 <small>(漢字)</small></th>
+				<td class="flextd"><input type="text" name="sei" class="h20" placeholder="大阪"><input type="text" name="mei" class="h20" placeholder="春太郎"></td>
+			</tr>
+
+			<tr>
+				<th>フリガナ <small>(カタカナ)</small></th>
+				<td class="flextd"><input type="text" name="seihuri" class="h20" placeholder="オオサカ"><input type="text" name="meihuri" class="h20" placeholder="ハルタロウ"></td>
+			</tr>
+			<tr>
+				<th>性別</th>
+		    	<td class= flexra><label class="flexradio">男性<input type="radio" name="seibetu" value="男性" checked></label>
+		   		<label class="flexradio">女性<input type="radio" name="seibetu" value="女性"></label></td>
+			</tr>
+			<tr>
+				<th>生年月日</th>
+				<td class="flextd"><input type="text" name="nen" class="h20" id="nenput0" placeholder="2000"><h4>年</h4><input type="text" name="gatu" class="h20" id="nenput" placeholder="1"><h4>月</h4><input type="text" name="pi" class="h20" id="nenput" placeholder="1"><h4>日</h4></td>
+			</tr>
+			<tr>
+				<th>電話番号</th>
+				<td><input type="text" name="telno" class="h20" placeholder="080-1111-1111"></td>
+			</tr>
+			<tr>
+				<th>メールアドレス</th>
+				<td><input type="email" name="mail1" class="h21" placeholder="osaka@hal.ac"></td>
+			</tr>
+			<tr>
+				<th>メールアドレス(再確認)</th>
+				<td><input type="email" name="mail2" class="h21" placeholder="osaka@hal.ac"></td>
+			</tr>
+			<tr>
+		    	<th>パスワード</th>
+		    	<td><input type="text" name="pass" autocomplete="off" placeholder="osakahal"><h4 class="h4red">※半角英大文字、半角英小文字、数字で入力してください。</h4></td>
+			</tr>
+			<tr>
+				<th>郵便番号</th>
+				<td><input type="text" name="yu" class="h22" placeholder="530-0001"></td>
+			</tr>
+			<tr>
+				<th>ご住所</th>
+				<td><div class="yoko"><h4>都道府県</h4>
+			<select name="zyusyo1" class="h23">
+          <option value="" selected="selected">【選択して下さい】</option>
+          <optgroup label="北海道・東北地方">
+           <option value="北海道">北海道</option>
+           <option value="青森県">青森県</option>
+           <option value="岩手県">岩手県</option>
+           <option value="秋田県">秋田県</option>
+           <option value="宮城県">宮城県</option>
+           <option value="山形県">山形県</option>
+           <option value="福島県">福島県</option>
+          </optgroup>
+          <optgroup label="関東地方">
+           <option value="栃木県">栃木県</option>
+           <option value="群馬県">群馬県</option>
+           <option value="茨城県">茨城県</option>
+           <option value="埼玉県">埼玉県</option>
+           <option value="東京都">東京都</option>
+           <option value="千葉県">千葉県</option>
+           <option value="神奈川県">神奈川県</option>
+          </optgroup>
+          <optgroup label="中部地方">
+           <option value="山梨県">山梨県</option>
+           <option value="長野県">長野県</option>
+           <option value="新潟県">新潟県</option>
+           <option value="富山県">富山県</option>
+           <option value="石川県">石川県</option>
+           <option value="福井県">福井県</option>
+           <option value="静岡県">静岡県</option>
+           <option value="岐阜県">岐阜県</option>
+           <option value="愛知県">愛知県</option>
+          </optgroup>
+          <optgroup label="近畿地方">
+           <option value="三重県">三重県</option>
+           <option value="滋賀県">滋賀県</option>
+           <option value="京都府">京都府</option>
+           <option value="大阪府">大阪府</option>
+           <option value="兵庫県">兵庫県</option>
+           <option value="奈良県">奈良県</option>
+           <option value="和歌山県">和歌山県</option>
+          </optgroup>
+          <optgroup label="四国地方">
+           <option value="徳島県">徳島県</option>
+           <option value="香川県">香川県</option>
+           <option value="愛媛県">愛媛県</option>
+           <option value="高知県">高知県</option>
+          </optgroup>
+          <optgroup label="中国地方">
+           <option value="鳥取県">鳥取県</option>
+           <option value="島根県">島根県</option>
+           <option value="岡山県">岡山県</option>
+           <option value="広島県">広島県</option>
+           <option value="山口県">山口県</option>
+          </optgroup>
+          <optgroup label="九州・沖縄地方">
+           <option value="福岡県">福岡県</option>
+           <option value="佐賀県">佐賀県</option>
+           <option value="長崎県">長崎県</option>
+           <option value="大分県">大分県</option>
+           <option value="熊本県">熊本県</option>
+           <option value="宮崎県">宮崎県</option>
+           <option value="鹿児島県">鹿児島県</option>
+           <option value="沖縄県">沖縄県</option>
+          </optgroup>
+         </select>
+     	</div>
+     	<div class="yoko">
+     		<h4>市区町村</h4><input type="text" name="zyusyo2" placeholder="大阪市北区梅田">
+     	</div>
+     	<div class="yoko">
+     		<h4>丁目番地</h4><input type="text" name="zyusyo3" placeholder="3丁目3-1">
+     	</div>
+    </td>
+	</tr>
+	<tr>
+		<th>職種</th>
+		<td class= flexra><label class="flexradio">高校生<input type="radio" name="syoku" value="高校生" checked></label>
+		<label class="flexradio">大学生<input type="radio" name="syoku" value="大学生"></label>
+		<label class="flexradio">会社員<input type="radio" name="syoku" value="会社員"></label>
+		<label class="flexradio">その他<input type="radio" name="syoku" value="その他"></label></td>
+	</tr>
+	<tr>
+		<th>所持免許</th>
+		<td class= flexra><label class="flexradio">なし<input type="radio" name="menkyo" value="なし" checked></label>
+		<label class="flexradio">原付<input type="radio" name="menkyo" value="原付"></label>
+		<label class="flexradio">二輪（10,800OFF)<input type="radio" name="menkyo" value="二輪"></label></td>
+	</tr>
+	<tr>
+		<th>行政処分</th>
+		<td class= flexra><label class="flexradio">なし<input type="radio" name="gyousei" value="なし" checked></label>
+		<label class="flexradio">あり<input type="radio" name="gyousei" value="あり"></label></td>
+	</tr>
+	<tr>
+		<th>希望車種</th>
+		<td class= flexra><label class="flexradio">普通車AT<input type="radio" name="kibou" value="普通車AT" checked></label>
+		<label class="flexradio">普通車MT<input type="radio" name="kibou" value="普通車MT"></label></td>
+	</tr>
+	<tr>
+		<th>入校される人数</th>
+		<td id="nyuukoutd"><div id="narabe"><input type="text" name="ninzu" class="h27" id="ninzubox"><h4>人　(数字で入力してください)</h4></div><h4>一緒に入校される方の名前(いる場合)</h4><textarea name="issyoninzu" id="issyoninzu" cols="50" rows="3"></textarea></td>
+	</tr>
+	<tr>
+		<th>希望部屋タイプ</th>
+		<td>
+		<select name="heyaplan" class="h25">
+			<option value="" selected="selected">【選択して下さい】</option>
+		    <option value="「スカイハイ」 (ツイン)">「スカイハイ」 (ツイン)</option>
+		    <option value="「スカイハイ」 (シングル)">「スカイハイ」 (シングル)</option>
+		    <option value="コテージ 「フィット」">コテージ 「フィット」</option>
+		    <option value="メゾン 「ウィング」 (ツイン)">メゾン 「ウィング」 (ツイン)</option>
+		    <option value="メゾン 「ウィング」 (シングル)">メゾン 「ウィング」 (シングル)</option>
+		    <option value="メゾン 「ドマーニ」 (ツイン)">メゾン 「ドマーニ」 (ツイン)</option>
+		    <option value="メゾン 「ドマーニ」 (シングル)">メゾン 「ドマーニ」 (シングル)</option>
+		</select>
+		<h4 class="h4red">※宿泊施設の空き状況等により、ご希望に添えない場合がございます。</h4>
+		</td>
+	</tr>
+	<tr>
+		<th>希望入校日</th>
+		<td id="nyukoubi"><div class=yoko><h4>第一希望</h4><input type="text" class="datepicker" name="dai1"></div><div class=yoko><h4>第二希望</h4><input type="text" class="datepicker" name="dai2"></div><div class=yoko><h4>第三希望</h4><input type="text" class="datepicker" name="dai3"></div><h4 class="h4red">※宿泊施設の空き状況等により、ご希望に添えない場合がございます。</h4>
+		</td></td>
+	</tr>
+	<tr>
+		<th>希望の連絡時間</th>
+		<td><select name="renrakuzikan" class="h26">
+			<option value="" selected="selected">【選択して下さい】</option>
+		    <option value="いつでも">いつでも</option>
+		    <option value="午前">午前</option>
+		    <option value="午後">午後</option>
+		</select>
+		<div id="kibourenraku">
+			<input type="text" name="kibounitizi">
+			<h4>その他、ご希望の日時があればご入力ください。（例：○月○日○時頃）</h4>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<th>ご質問・ご要望など</th>
+		<td><textarea name="gositumon" id="gositumonbox" cols="100" rows="7"></textarea></td>
+	</tr>
+
+		</table>
+
+		<input type="submit" value="確認画面へ⇒" id="sousinbot">
+	</form>
+
+		<p>後ほど改めまして、連絡をさせていただきます。</p>
+		<p class="redpp">※このお申込みフォーム送信をもって契約が成立するものではございません。</p>
+		</div>
+
+
+	</div><!-- itemA -->
+	<div id="itemB">
+		<div id="naviB">
+			<h2>お申込み</h2>
+			<ul>
+				<li><img src="images/point2.gif" width="15" height="15"><a href="omousikomi.html">お申込み</a></li>
+				<li><img src="images/point2.gif" width="15" height="15"><a href="omousikomihouhou.html">お申込み方法</a></li>
+				<li><img src="images/point2.gif" width="15" height="15"><a href="omousikomikiyaku.html">お申込み規約</a></li>
+				<li><img src="images/point2.gif" width="15" height="15"><a href="puraibasi.html">プライバシーポリシー</a></li>
+			</ul>
+
+		</div>
+		<div class="imglink"><a href="https://www.instagram.com/nanbu_hometigiru/" target="_blank"><img src="images/insta.png" width="250" height="87"></a></div>
+					<div class="imglink"><a href="https://twitter.com/safety_nanbu" target="_blank"><img src="images/twitter.png" width="250"></div>
+					<div class="imglink"><a href="media.php"><img src="images/bnr-media.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="life.html"><img src="images/bnr-album.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="voice8.html"><img src="images/bnr-voice.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="qanda.html"><img src="images/bnr-qaa.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="gakkou.html#access"><img src="images/bnr-access.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="hogosya.html"><img src="images/bnr-parents.jpg" width="250" height="104"></a></div>
+					<div class="imglink"><a href="omousikomihouhou.html#ron"><img src="images/bnr-loan.jpg" width="250" height="156"></a></div>
+					<div class="imglink" id="bnrn"><a href="nfile.html"><img src="images/page_banner.png" width="244"></div>
+					<h3 id="logobnr">インストラクターの紹介</h3></a>
+					<div id="topback"><a href="#top"><img src="images/topcute.png" width="180" height="180"></a></div>
+				</div><!-- itemB -->
+			</div><!-- container -->
+			<div id=footerwidth>
+				<div id=footer>
+					<div id=Lf>
+						<img src="images/footer-logo.png" id="flogo">
+						<p>三重県伊勢市小俣町元町1648-10<br>
+						フリーダイヤル	0800-200-4555</p>
+					</div><!-- Lf -->
+					<div id=Rf>
+						<div id=Rf1>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="index.html">トップページ</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="miryoku.html">NANBUの魅力</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="plan.html">プラン紹介</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="ryoukin.html">料金表</a>
+							</div>
+						</div>
+						<div id=Rf2>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="sisetu.html">施設案内</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="gakkou.html">学校案内</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="omousikomi.html">お申込み</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="omousikomihouhou.html">お申し込み方法</a>
+							</div>
+						</div>
+						<div id=Rf3>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="omousikomikiyaku.html">お申込み規約</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="puraibasi.html">プライバシーポリシー</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="qanda.html">よくある質問</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="gakkou.html#access">交通アクセス</a>
+							</div>
+						</div>
+						<div id=Rf4>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="nfile.html">インストラクターの紹介</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="voice8.html">卒業生の声</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="life.html">合宿ライフアルバム</a>
+							</div>
+							<div class=rf3>
+								<img src="images/point1.gif" width="15" height="15">
+								<a href="hogosya.html">保護者の皆様へ</a>
+							</div>
+						</div><!-- Rf -->
+					</div>
+				</div><!-- footer -->
+			</div><!-- footerwidth -->
+</div><!-- wrapper -->
+</body>
+</html>
